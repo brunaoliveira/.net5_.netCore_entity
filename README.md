@@ -28,3 +28,10 @@
 - One-To-One
 - One-To-Many
 - Many-To-Many
+
+
+## To run
+```
+  cd dotnet-rpg
+  dotnet run
+```
