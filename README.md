@@ -31,7 +31,13 @@
 
 
 ## To run
+
+### Application
 ```
   cd dotnet-rpg
   dotnet run
 ```
+
+### Debug on Swagger
+Follow path: https://localhost:5001/swagger/index.html
+
