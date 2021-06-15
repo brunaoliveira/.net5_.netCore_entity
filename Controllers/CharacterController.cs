@@ -14,12 +14,14 @@ namespace dotnet_rpg.Controllers
         };
         
         [HttpGet]
+        [Route("GetAll")]
         public ActionResult<List<Character>> Get() 
         {
             return Ok(characters);
         }
 
         [HttpGet]
+        [Route("GetFirst")]
         public ActionResult<Character> GetFirst() 
         {
             return Ok(characters[0]);
