@@ -8,6 +8,8 @@ namespace dotnet_rpg.Controllers
     public class CharacterController : ControllerBase
     {
         private static Character witch = new Character();
+        
+        [HttpGet]
         public IActionResult Get() 
         {
             return Ok(witch);
