@@ -22,7 +22,7 @@ namespace dotnet_rpg.Controllers
         }
 
         [HttpGet]
-        [Route("GetSingle")]
+        [Route("GetSingle{id}")]
         public ActionResult<Character> GetSingle(int id) 
         {
             return Ok(characters.FirstOrDefault(c => c.Id == id));
