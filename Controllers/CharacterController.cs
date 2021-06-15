@@ -18,5 +18,11 @@ namespace dotnet_rpg.Controllers
         {
             return Ok(characters);
         }
+
+        [HttpGet]
+        public ActionResult<Character> GetFirst() 
+        {
+            return Ok(characters[0]);
+        }
     }
 }
