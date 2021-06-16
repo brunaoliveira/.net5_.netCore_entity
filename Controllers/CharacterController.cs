@@ -14,7 +14,7 @@ namespace dotnet_rpg.Controllers
 
     public CharacterController(ICharacterService characterService)
     {
-      characterService = _characterService;
+      _characterService = characterService;
     }
 
     [HttpGet]
