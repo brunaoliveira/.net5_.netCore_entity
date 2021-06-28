@@ -30,6 +30,18 @@
 - Many-To-Many
 
 
+## Dependencies
+- Swashbuckle
+- AutoMapper
+- Entity Framework Core Design
+- Entity Framework Core SqlServer
+
+
+## Entity Framework Migration
+```
+  dotnet ef migrations add InitialCreate
+```
+
 ## To run
 
 ### Application
