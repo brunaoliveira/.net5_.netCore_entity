@@ -9,8 +9,8 @@ using dotnet_rpg.Data;
 namespace dotnet_rpg.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210628133716_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210630194311_IniatialCreate")]
+    partial class IniatialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
