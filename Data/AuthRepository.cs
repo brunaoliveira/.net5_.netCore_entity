@@ -19,6 +19,11 @@ namespace dotnet_rpg.Data
 
     public async Task<ServiceResponse<int>> Register(User user, string password)
     {
+        CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+
+        user.PasswordHash = passwordHash;
+        user.PasswordSalt = passwordSalt;
+
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
 
@@ -31,6 +36,15 @@ namespace dotnet_rpg.Data
     public Task<bool> UserExists(string username)
     {
       throw new System.NotImplementedException();
+    }
+
+    private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt) 
+    {
+        using(var hmac = new System.Security.Cryptography.HMACSHA512())
+        {
+            passwordSalt = hmac.Key;
+            passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+        }
     }
   }
 }
