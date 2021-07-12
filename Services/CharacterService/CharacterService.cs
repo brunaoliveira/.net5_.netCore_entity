@@ -41,7 +41,7 @@ namespace dotnet_rpg.Services.CharacterService
       try
       {
         Character character = await _context.Characters.FirstAsync(c => c.Id == id);
-        
+
         _context.Characters.Remove(character);
         await _context.SaveChangesAsync();
 

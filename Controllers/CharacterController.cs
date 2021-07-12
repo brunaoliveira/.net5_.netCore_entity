@@ -44,7 +44,7 @@ namespace dotnet_rpg.Controllers
     {
       var response = await _characterService.UpdateCharacter(updatedCharacter);
 
-      if(response.Data == null) 
+      if (response.Data == null)
       {
         return NotFound(response);
       }
@@ -57,7 +57,7 @@ namespace dotnet_rpg.Controllers
     {
       var response = await _characterService.DeleteCharacter(id);
 
-      if(response.Data == null)
+      if (response.Data == null)
       {
         return NotFound(response);
       }
