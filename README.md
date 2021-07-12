@@ -32,7 +32,7 @@
 
 ## Dependencies
 
-- Swashbuckle
+- Swashbuckle Filters
 - AutoMapper
 - Entity Framework Core Design
 - Entity Framework Core SqlServer
@@ -62,3 +62,10 @@ On the [JWT](https://jwt.io/) page "Debugger" one can take a deeper look into th
 ### Debug on Swagger
 
 Follow path: https://localhost:5001/swagger/index.html
+- To test secured methods with Swagger
+  * run ```/Auth/Login``` with a registered user
+  * copy the token generated
+  * on right top of the page click on ```Authorize``` and paste the value from previous step, like the example given on the screen
+  ```
+  bearer <TOKEN>
+  ```
