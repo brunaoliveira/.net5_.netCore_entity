@@ -70,4 +70,5 @@ Follow path: https://localhost:5001/swagger/index.html
     bearer <TOKEN>
     ```
   * after successfully loging, the locked methods (closed lock on right corner) can be tested and the message shown should be like the image below 
+  
   ![image](https://user-images.githubusercontent.com/7097408/125334290-98af8e00-e321-11eb-82b9-436be63ad72b.png)
