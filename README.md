@@ -66,6 +66,6 @@ Follow path: https://localhost:5001/swagger/index.html
   * run ```/Auth/Login``` with a registered user
   * copy the token generated
   * on right top of the page click on ```Authorize``` and paste the value from previous step, like the example given on the screen
-  ```
-  bearer <TOKEN>
-  ```
+    ```
+    bearer <TOKEN>
+    ```
