@@ -36,6 +36,8 @@
 - AutoMapper
 - Entity Framework Core Design
 - Entity Framework Core SqlServer
+- JWT Bearer
+
 
 ## Entity Framework Migration
 
