@@ -99,17 +99,28 @@ namespace dotnet_rpg.Services.CharacterService
 
       try
       {
-        Character character = await _context.Characters.FirstOrDefaultAsync(c => c.Id == updatedCharacter.Id);
-        character.Name = updatedCharacter.Name;
-        character.HitPoints = updatedCharacter.HitPoints;
-        character.Strength = updatedCharacter.Strength;
-        character.Defense = updatedCharacter.Defense;
-        character.Intelligence = updatedCharacter.Intelligence;
-        character.Class = updatedCharacter.Class;
+        Character character = await _context.Characters
+          .Include(c => c.User) // IMPORTANT! EF does not keep the relations downward without it
+          .FirstOrDefaultAsync(c => c.Id == updatedCharacter.Id);
 
-        await _context.SaveChangesAsync();
+        if (character.User.Id == GetUserId())
+        {
+          character.Name = updatedCharacter.Name;
+          character.HitPoints = updatedCharacter.HitPoints;
+          character.Strength = updatedCharacter.Strength;
+          character.Defense = updatedCharacter.Defense;
+          character.Intelligence = updatedCharacter.Intelligence;
+          character.Class = updatedCharacter.Class;
 
-        serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+          await _context.SaveChangesAsync();
+
+          serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+        }
+        else
+        {
+          serviceResponse.Success = false;
+          serviceResponse.Message = "Character not found.";
+        }
       }
       catch (Exception ex)
       {
