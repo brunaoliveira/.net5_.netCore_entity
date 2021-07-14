@@ -36,7 +36,9 @@ namespace dotnet_rpg.Services.CharacterService
       _context.Characters.Add(character);
       await _context.SaveChangesAsync();
 
-      serviceResponse.Data = await _context.Characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToListAsync();
+      serviceResponse.Data = await _context.Characters
+        .Where(c => c.User.Id == GetUserId())
+        .Select(c => _mapper.Map<GetCharacterDto>(c)).ToListAsync();
 
       return serviceResponse;
     }
