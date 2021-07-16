@@ -13,13 +13,14 @@ namespace dotnet_rpg.Controllers
   public class WeaponController : ControllerBase
   {
     private readonly IWeaponService _weaponService;
+
     public WeaponController(IWeaponService weaponService)
     {
       _weaponService = weaponService;
     }
 
     [HttpPost]
-    async Task<ActionResult<ServiceResponse<GetCharacterDto>>> AddWeapon(AddWeaponDto newWeapon)
+    public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> AddWeapon(AddWeaponDto newWeapon)
     {
       return Ok(await _weaponService.AddWeapon(newWeapon));
     }
