@@ -36,7 +36,7 @@ namespace dotnet_rpg.Services.Fight
         if (skill == null)
         {
           response.Success = false;
-          response.Message = $"{attacker.Name} doesn't know this skill."
+          response.Message = $"{attacker.Name} doesn't know this skill.";
 
           return response;
         }
