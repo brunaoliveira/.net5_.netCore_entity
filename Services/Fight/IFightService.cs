@@ -5,8 +5,9 @@ using dotnet_rpg.Models;
 
 namespace dotnet_rpg.Services.Fight
 {
-    public interface IFightService
-    {
-        Task<ServiceResponse<AttackResultDto>> WeaponAttack(WeaponAttackDto request); 
-    }
+  public interface IFightService
+  {
+    Task<ServiceResponse<AttackResultDto>> WeaponAttack(WeaponAttackDto request);
+    Task<ServiceResponse<AttackResultDto>> SkillAttack(SkillAttackDto request);
+  }
 }
